@@ -126,15 +126,15 @@ leaveTheShire();
 var theFellowship = rivendell.querySelectorAll("li");
 function forgeTheFellowShip() {
   // Create a new div called 'the-fellowship' within rivendell
-  var div = document.createElement("div");  // need a variable to hold it to reference it
-  div.setAttribute("id", "the-fellowship");
-  rivendell.appendChild(div);
+  var nine = document.createElement("div");  // need a variable to hold it to reference it
+  nine.setAttribute("id", "the-fellowship");
+  rivendell.appendChild(nine);
   // Add each hobbit and buddy one at a time to 'the-fellowship'.
   for (i = 0; i < theFellowship.length; i++) {
-    div.appendChild(theFellowship[i]);
+    nine.appendChild(theFellowship[i]);
     // After each character is added make an alert that they have joined your party.
     console.log(theFellowship[i].textContent + " joined the fellowship.");
-  };
+  }
 }
 
 forgeTheFellowShip();
@@ -178,9 +178,9 @@ function itsDangerousToGoAlone(){
   mordor.appendChild(frodo);
   mordor.appendChild(sam);
   // Add a div with an id of 'mount-doom' to Mordor.
-  var div = document.createElement("div");  // need a variable to hold it to reference it
-  div.setAttribute("id", "mount-doom");
-  mordor.appendChild(div);
+  var mountDoom = document.createElement("div");  // need a variable to hold it to reference it
+  mountDoom.setAttribute("id", "mount-doom");
+  mordor.appendChild(mountDoom);
 }
 
 itsDangerousToGoAlone();
@@ -188,13 +188,20 @@ itsDangerousToGoAlone();
 
 // Part 11 - We wants it
 
+var myPrecious = frodo.querySelector("#the-ring");
 function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor.
-
+  var gollum = document.createElement("div");  // <-- need a variable to hold it to reference it
+  gollum.setAttribute("id", "gollum");
+  mordor.appendChild(gollum);
   // Remove the ring from Frodo and give it to Gollum.
-
+  gollum.appendChild(myPrecious);
   // Move Gollum into Mount Doom.
+  document.getElementById("mount-doom").appendChild(document.getElementById("gollum"));
+  mountDoom.appendChild(gollum);
 }
+
+weWantsIt();
 
 
 // Part 12 - There and back again
