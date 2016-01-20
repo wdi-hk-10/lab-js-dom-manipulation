@@ -198,7 +198,6 @@ function weWantsIt() {
   gollum.appendChild(myPrecious);
   // Move Gollum into Mount Doom.
   document.getElementById("mount-doom").appendChild(document.getElementById("gollum"));
-  mountDoom.appendChild(gollum);
 }
 
 weWantsIt();
@@ -206,14 +205,22 @@ weWantsIt();
 
 // Part 12 - There and back again
 
+var byeBuddies = rivendell.querySelectorAll(".buddy");
+var homeHobbits = document.querySelectorAll(".hobbit");
 function thereAndBackAgain() {
   // Remove Gollum and the Ring from the document.
-
-  // Remove all the baddies from the document.
-
+  document.getElementById("gollum").style.display = "none";
+  // Remove all the buddies from the document.
+  for (i = 0; i < byeBuddies.length; i++) {
+    byeBuddies[i].style.display = "none";
+  }
   // Move all the hobbits back to the shire.
+  for (i = 0; i < homeHobbits.length; i++) {
+    theShire.appendChild(homeHobbits[i]);
+  }
 }
 
+thereAndBackAgain();
 
 // Bonus - The One Ring
 
