@@ -169,11 +169,14 @@ hornOfGondor();
 // Part 10
 frodo = rivendell.querySelectorAll(".hobbit")[0];
 var sam = rivendell.querySelectorAll(".hobbit")[1];
+var travelTogether = document.createElement("ul");
+travelTogether.setAttribute("id", "travelTogether");
+mordor.appendChild(travelTogether)
 
 function itsDangerousToGoAlone(){
   // take Frodo and Sam out of the fellowship and move them to Mordor
-  mordor.appendChild(frodo);
-  mordor.appendChild(sam);
+  travelTogether.appendChild(frodo);
+  travelTogether.appendChild(sam);
   // add a div with an id of 'mount-doom' to Mordor
   var mountDoom = document.createElement("div");
   mountDoom.setAttribute("id", "mount-doom");
@@ -204,9 +207,32 @@ weWantsIt();
 
 function thereAndBackAgain() {
   // remove Gollum and the Ring from the document
-
-  // remove all the buddies from the document
+  var gollumDies = mordor.querySelector("div");
+  var gollum = mordor.querySelectorAll("div")[1];
+  gollumDies.removeChild(gollum);
+  // remove all the baddies from the document
+  var eyeOfSauron = body.querySelectorAll("article")[2];
+  eyeOfSauron.style.background = "none";
   // Move all the hobbits back to the shire
+  theShire.appendChild(travelTogether);
+
+  var merry = rivendell.querySelectorAll(".hobbit")[0];
+  var pippin = rivendell.querySelectorAll(".hobbit")[1];
+
+  var rivendellHobbits = document.createElement("ul");
+  rivendellHobbits.setAttribute("id", "rivendellHobbits");
+
+  rivendellHobbits.appendChild(merry);
+  rivendellHobbits.appendChild(pippin);
+  theShire.appendChild(rivendellHobbits);
 }
 
 thereAndBackAgain();
+
+  var byeFellowship = rivendell.querySelectorAll("ul")[2];
+  byeFellowship.removeChild(baddies);
+
+// Bonus 1 - Within the click event listener for clicking `'#the-ring'`, add functionality so that when it's clicked, it not only calls `nazgulScreech` but also causes Frodo's opacity to go down to 0 for a while, only to fade back in.
+
+
+// Bonus 2 - If the ring is clicked three times, the entire body element should disappear, to be replaced with the text "The Ring has been returned to Sauron and the world is over."
