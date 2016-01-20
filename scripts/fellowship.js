@@ -114,10 +114,13 @@ function beautifulStranger() {
 beautifulStranger();
 
 // Part 6
-var halflings = theShire.querySelector("ul");
+var halflings = theShire.querySelectorAll("li");
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
-  rivendell.appendChild(halflings);
+  var ul = rivendell.querySelector("ul");
+  for (var i=0; i<halflings.length; i++) {
+    ul.appendChild(halflings[i]);
+  }
 }
 
 leaveTheShire();
