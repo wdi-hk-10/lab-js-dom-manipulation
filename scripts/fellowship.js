@@ -21,7 +21,7 @@ var lands = ['The Shire', 'Rivendell', 'Mordor'];
 var body = document.querySelector('body');
 
 
-// Part 1
+// Part 1 - Make Middle Earth
 
 function makeMiddleEarth() {
   // Create a section tag with an id of middle-earth
@@ -41,7 +41,7 @@ function makeMiddleEarth() {
 makeMiddleEarth();
 
 
-// Part 2
+// Part 2 - Make Hobbits
 
 var theShire = document.querySelectorAll("article")[0];
 var rivendell = document.querySelectorAll("article")[1];
@@ -60,7 +60,7 @@ function makeHobbits() {
 makeHobbits();
 
 
-// Part 3
+// Part 3 - Keep it secret, keep it safe
 
 var frodo = document.querySelector(".hobbit"); //don't need querySelectorAll as Frodo is the first child of theShire
 function keepItSecretKeepItSafe() {
@@ -78,7 +78,7 @@ function keepItSecretKeepItSafe() {
 keepItSecretKeepItSafe();
 
 
-// Part 4
+// Part 4 - Make buddies
 
 function makeBuddies() {
   // Create an aside tag
@@ -96,7 +96,7 @@ buddies.forEach(function(buddyName){
 makeBuddies();
 
 
-// Part 5
+// Part 5 - Beautiful stranger
 
 var strider = rivendell.querySelectorAll("li")[3];
 function beautifulStranger() {
@@ -107,7 +107,7 @@ function beautifulStranger() {
 beautifulStranger();
 
 
-// Part 6
+// Part 6 - Leave the Shire
 
 var halflings = theShire.querySelectorAll("li");
 function leaveTheShire() {
@@ -121,7 +121,7 @@ function leaveTheShire() {
 leaveTheShire();
 
 
-// Part 7
+// Part 7 - Forge the Fellowship
 
 var theFellowship = rivendell.querySelectorAll("li");
 function forgeTheFellowShip() {
@@ -140,7 +140,7 @@ function forgeTheFellowShip() {
 forgeTheFellowShip();
 
 
-// Part 8
+// Part 8 - The Balrog
 
 var gandalf = rivendell.querySelectorAll("li")[0];
 function theBalrog() {
@@ -154,9 +154,9 @@ function theBalrog() {
 theBalrog();
 
 
-// Part 9
+// Part 9 - Horn of Gondor
 
-var boromir = rivendell.querySelectorAll("li")[4]
+var boromir = rivendell.querySelectorAll("li")[4];
 function hornOfGondor() {
   // Pop up an alert that the horn of gondor has been blown.
   console.log("The Horn of Gondor has been blown!");  // <-- should be an alert but they're so 1990s annoying!
@@ -170,16 +170,23 @@ function hornOfGondor() {
 hornOfGondor();
 
 
-// Part 10
+// Part 10 - It's dangerous to go alone
 
+var sam = rivendell.querySelectorAll("li") [6];
 function itsDangerousToGoAlone(){
   // Take Frodo and Sam out of the fellowship and move them to Mordor.
-
+  mordor.appendChild(frodo);
+  mordor.appendChild(sam);
   // Add a div with an id of 'mount-doom' to Mordor.
+  var div = document.createElement("div");  // need a variable to hold it to reference it
+  div.setAttribute("id", "mount-doom");
+  mordor.appendChild(div);
 }
 
+itsDangerousToGoAlone();
 
-// Part 11
+
+// Part 11 - We wants it
 
 function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor.
@@ -190,7 +197,7 @@ function weWantsIt() {
 }
 
 
-// Part 12
+// Part 12 - There and back again
 
 function thereAndBackAgain() {
   // Remove Gollum and the Ring from the document.
@@ -201,7 +208,7 @@ function thereAndBackAgain() {
 }
 
 
-// Bonus
+// Bonus - The One Ring
 
 // Within the click event listener for clicking '#the-ring', add functionality so that when it's clicked,
 // it not only calls nazgulScreech but also causes Frodo's opacity to go down to 0 for a while, only to fade back in.
