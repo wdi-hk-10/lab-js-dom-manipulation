@@ -115,7 +115,7 @@ makeBuddies();
 
 // Part 5
 
-var strider = rivendell.querySelectorAll("li")[0];
+var strider = rivendell.querySelectorAll("li")[3];
 
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
@@ -127,24 +127,38 @@ beautifulStranger();
 
 // Part 6
 
-var halflings = theShire.querySelector("ul");
+var halflings = theShire.querySelectorAll("li");
 
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
-  rivendell.appendChild(halflings);
+  var ul = rivendell.querySelector("ul");
+  for (var i = 0; i < halflings.length; i++) {
+    ul.appendChild(halflings[i]);
+  }
+
 }
 
 leaveTheShire();
 
 // Part 7
 
-var theFellowship = document.createElement("div");
+var theFellowship = rivendell.querySelectorAll("li");
 
 function forgeTheFellowShip() {
+  var fellows = document.createElement("div");
+  fellows.setAttribute("id", "the-fellowship");
+  rivendell.appendChild(fellows);
+  for (i=0; i<theFellowship.length; i++) {
+    fellows.appendChild(theFellowship[i]);
+    console.log(theFellowship[i].textcontent + " has joined the Fellowship");
+  }
+//  fellows.appendChild(theFellowship);
   // create a new div called 'the-fellowship' within rivendell
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
 }
+
+forgeTheFellowShip();
 
 
 // Part 8
