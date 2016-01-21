@@ -186,9 +186,6 @@ function weWantsIt() {
   var smeagol = document.createElement("div");
   smeagol.setAttribute("id","gollum");
   mordor.appendChild(smeagol);
-  //var needFood = document.querySelector("#gollum");
-  //var precious = document.querySelector("#the-ring");
-  //needFood.appendChild(precious);
   document.querySelector("#gollum").appendChild(document.querySelector("#the-ring"));
   document.querySelector("#mount-doom").appendChild(document.querySelector("#gollum"));
   // Create a div with an id of 'gollum' and add it to Mordor
@@ -196,7 +193,7 @@ function weWantsIt() {
   // Move Gollum into Mount Doom
 }
 weWantsIt();
-/*
+
 // Part 12
 var mers = rivendell.querySelectorAll(".hobbit")[0];
 var pips = rivendell.querySelectorAll(".hobbit")[1];
@@ -214,5 +211,3 @@ function thereAndBackAgain() {
   // Move all the hobbits back to the shire
 }
 thereAndBackAgain();
-
-*/
