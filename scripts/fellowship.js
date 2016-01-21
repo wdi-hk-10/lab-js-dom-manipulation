@@ -151,7 +151,7 @@ function theBalrog() {
   gandalf.style.border = "thick solid gray";
 }
 
-theBalrog();
+//theBalrog();
 
 
 // Part 9 - Horn of Gondor
@@ -167,12 +167,12 @@ function hornOfGondor() {
   boromir.style.display = "none";
 }
 
-hornOfGondor();
+//hornOfGondor();
 
 
 // Part 10 - It's dangerous to go alone
 
-var sam = rivendell.querySelectorAll("li") [6];
+var sam = rivendell.querySelectorAll("li")[6];
 function itsDangerousToGoAlone(){
   // Take Frodo and Sam out of the fellowship and move them to Mordor.
   mordor.appendChild(frodo);
@@ -183,7 +183,7 @@ function itsDangerousToGoAlone(){
   mordor.appendChild(mountDoom);
 }
 
-itsDangerousToGoAlone();
+//itsDangerousToGoAlone();
 
 
 // Part 11 - We wants it
@@ -200,7 +200,7 @@ function weWantsIt() {
   document.getElementById("mount-doom").appendChild(document.getElementById("gollum"));
 }
 
-weWantsIt();
+//weWantsIt();
 
 
 // Part 12 - There and back again
@@ -220,7 +220,7 @@ function thereAndBackAgain() {
   }
 }
 
-thereAndBackAgain();
+//thereAndBackAgain();
 
 // Bonus - The One Ring
 
@@ -229,3 +229,35 @@ thereAndBackAgain();
 
 // If the ring is clicked three times, the entire body element should disappear, to be replaced with the text
 // "The Ring has been returned to Sauron and the world is over."
+
+var screech = 0;
+var frodo = document.querySelector(".hobbit"); //don't need querySelectorAll as Frodo is the first child of theShire
+function keepItSecretKeepItSafe() {
+  // Create a div with an id of 'the-ring'.
+  var theOneRing = document.createElement("div");
+  theOneRing.setAttribute("id", "the-ring");
+  // Give the div a class of 'magic-imbued-jewelry'.
+  theOneRing.setAttribute("class","magic-imbued-jewelry");
+  // Add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked.
+  theOneRing.addEventListener("click", function() {
+    eyeOfSauron()
+  });//do not add () after the function as will then only work once.
+  // Add the ring as a child of Frodo
+  frodo.appendChild(theOneRing);
+}
+
+keepItSecretKeepItSafe();
+
+
+function eyeOfSauron() {
+  var endText = document.querySelectorAll("body");
+  nazgulScreech()
+  screech = screech + 1
+  if (screech > 2) {
+    body.style.fontSize = "70px";
+    body.style.textAlign = "center";
+    body.textContent = "The Ring has been returned to Sauron and the world is over.";
+  }
+}
+
+
