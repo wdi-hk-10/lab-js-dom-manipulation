@@ -142,8 +142,8 @@ function theBalrog() {
   gandalf.textContent='Gandalf the White';
   // apply style to the element
   // make the background 'white', add a grey border
-  gandalf.style.background= "white"
-  gandalf.style.border= "5px solid grey"
+  gandalf.style.background= "white";
+  gandalf.style.border= "5px solid grey";
 }
 
 theBalrog();
@@ -152,10 +152,10 @@ theBalrog();
 var boromir = rivendell.querySelectorAll("li")[4]
 function hornOfGondor() {
   // pop up an alert that the horn of gondor has been blown
-  console.log("The Horn of Gondor has been blown. Boromir has been killed by the Uruk-hai!")
+  console.log("The Horn of Gondor has been blown. Boromir has been killed by the Uruk-hai!");
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
-  boromir.style.textDecoration= "line-through"
+  boromir.style.textDecoration= "line-through";
   // Remove Boromir from the Fellowship
   ul.removeChild(boromir);
 }
@@ -196,7 +196,6 @@ weWantsIt();
 
 // Part 12
 var GollumRing = mordor.querySelector("#mount-doom")
-var Section = body.querySelector("#middle-earth")
 var list = mordor.querySelectorAll("li")
 var list2 = ul.querySelectorAll("li")
 
