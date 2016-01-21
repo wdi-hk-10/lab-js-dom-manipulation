@@ -67,7 +67,8 @@ function keepItSecretKeepItSafe() {
   // give the div a class of 'magic-imbued-jewelry'
   $theOneRing = $('<div>').attr('id', 'the-ring').addClass('magic-imbued-jewelry');
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
-  $theOneRing.click(function() {
+  //$theOneRing.on('click', nazgulScreech);
+  $theOneRing.on('click', function() {
     nazgulScreech();
 
     //Bonus 1
@@ -80,6 +81,7 @@ function keepItSecretKeepItSafe() {
 
     //Bonus 2
     var touched = $frodo.data('ring-touched') + 1
+    //var touched = $.data($frodo, 'ring-touched') + 1;
     $frodo.data('ring-touched', touched);
     if (touched === 3) {
       $body.html('<div>The Ring has been returned to Sauron and the world is over.</div>');
@@ -89,16 +91,13 @@ function keepItSecretKeepItSafe() {
         textAlign: 'center'
       })
     }
-
   });
   // add the ring as a child of Frodo
   $frodo.append($theOneRing);
 }
-
 keepItSecretKeepItSafe();
 
 // Part 4
-
 
 function makeBuddies() {
   // create an aside tag
@@ -111,7 +110,7 @@ function makeBuddies() {
   $rivendell.append($ul.parent());
 }
 
-//makeBuddies();
+makeBuddies();
 
 
 // Part 5
@@ -122,7 +121,7 @@ function beautifulStranger() {
   $strider.text('Aragorn');
 }
 
-//beautifulStranger();
+beautifulStranger();
 
 
 // Part 6
@@ -131,7 +130,7 @@ function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
   $rivendell.find('aside > ul').append($halflings);
 }
-//leaveTheShire();
+leaveTheShire();
 
 
 // Part 7
@@ -149,8 +148,8 @@ function forgeTheFellowShip() {
   });
 }
 
-//forgeTheFellowShip();
-
+forgeTheFellowShip();
+/*
 // Part 8
 
 var $gandalf = $theFellowship.find('li:nth-child(1)');
@@ -222,3 +221,4 @@ function thereAndBackAgain() {
   });
 }
 thereAndBackAgain();
+*/
