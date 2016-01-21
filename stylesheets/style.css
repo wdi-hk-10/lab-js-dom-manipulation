@@ -168,3 +168,12 @@ ul {
   }
 
 }
+
+#the-fellowship > ul > li:first-child {
+  background: white;
+  border: solid gray;
+}
+
+#boromir {
+  text-decoration: line-through;
+}
