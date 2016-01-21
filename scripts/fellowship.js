@@ -127,56 +127,102 @@ leaveTheShire();
 
 
 // Part 7
-
-
+var fellowshipMembers = rivendell.querySelectorAll("li");
 function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
+  var theFellowship = document.createElement("div");
+  theFellowship.setAttribute("id", "the-fellowship");
   // add each hobbit and buddy one at a time to 'the-fellowship'
-  // after each character is added make an alert that they have joined your party
+  for (var i=0; i<fellowshipMembers.length; i++) {
+    theFellowship.appendChild(fellowshipMembers[i]);
+    // after each character is added make an alert that they have joined your party
+    console.log(fellowshipMembers[i].textContent + " has joined the party.");
+  }
+  rivendell.appendChild(theFellowship);
 }
 
+forgeTheFellowShip();
 
 // Part 8
-
+var gandalf = fellowshipMembers[0];
 
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
+  gandalf.textContent = "Gandalf the White";
   // apply style to the element
   // make the background 'white', add a grey border
+  gandalf.style.border = "3px solid gray";
+  gandalf.style.backgroundColor = "white";
 }
 
+theBalrog();
 
 // Part 9
-
+var boromir = fellowshipMembers[4];
 function hornOfGondor() {
   // pop up an alert that the horn of gondor has been blown
+  alert("The horn of gondor has been blown!!");
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
+  boromir.style.textDecoration = "line-through";
   // Remove Boromir from the Fellowship
+  var theFellowship = rivendell.querySelector("#the-fellowship");
+  theFellowship.removeChild(boromir);
+  //boromir.parentNode.removeChild(boromir);
 }
+
+hornOfGondor();
 
 
 // Part 10
-
+var sam = fellowshipMembers[6];
+var mountDoom;
+//var sam = rivendell.querySelectorAll("li")[5];
 function itsDangerousToGoAlone(){
   // take Frodo and Sam out of the fellowship and move them to Mordor
+  mordor.appendChild(frodo);
+  mordor.appendChild(sam);
   // add a div with an id of 'mount-doom' to Mordor
+  mountDoom = document.createElement("div");
+  mountDoom.setAttribute("id", "mount-doom");
+  mordor.appendChild(mountDoom);
 }
+
+itsDangerousToGoAlone();
 
 
 // Part 11
+var gollum, theRing;
 
 function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor
+  gollum = document.createElement("div");
+  gollum.setAttribute("id", "gollum");
   // Remove the ring from Frodo and give it to Gollum
+  theRing = frodo.querySelector("#the-ring");
+  gollum.appendChild(theRing);
   // Move Gollum into Mount Doom
+  mountDoom.appendChild(gollum);
 }
+
+weWantsIt();
 
 
 // Part 12
 
 function thereAndBackAgain() {
   // remove Gollum and the Ring from the document
+  gollum.parentNode.removeChild(gollum);
+  theRing.parentNode.removeChild(theRing);
   // remove all the baddies from the document
+  mordor.style.background = "transparent";
   // Move all the hobbits back to the shire
+  var hobbits = body.querySelectorAll(".hobbit");
+  var ul = document.createElement("ul");
+  for (var i=0; i<hobbits.length; i++) {
+    ul.appendChild(hobbits[i]);
+  }
+  theShire.appendChild(ul);
 }
+
+thereAndBackAgain();
