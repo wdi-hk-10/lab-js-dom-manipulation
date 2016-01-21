@@ -149,7 +149,7 @@ function forgeTheFellowShip() {
 }
 
 forgeTheFellowShip();
-/*
+
 // Part 8
 
 var $gandalf = $theFellowship.find('li:nth-child(1)');
@@ -221,4 +221,4 @@ function thereAndBackAgain() {
   });
 }
 thereAndBackAgain();
-*/
+
