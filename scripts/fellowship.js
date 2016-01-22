@@ -77,6 +77,32 @@ function keepItSecretKeepItSafe() {
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
   theOneRing.addEventListener("click", function() {
     nazgulScreech();
+
+    // Bonus 1
+    frodo.style.opacity = 1;
+    var magic = function(increment) {
+      var opacity = +frodo.style.opacity;
+      if (opacity >= 0) {
+        frodo.style.opacity = opacity + increment;
+      }
+    }
+    var fadeOutId = setInterval(magic, 200, -0.1);
+    var fadeInId;
+    setTimeout(function() { 
+      clearInterval(fadeOutId); 
+      fadeInId = setInterval(magic, 200, 0.1);
+    }, 2000);
+    setTimeout(function() { clearInterval(fadeInId); }, 4000);
+
+    // Bonus 2
+    ringTouched++;
+    if (ringTouched === 3) {
+      body.innerHTML = "<div>The Ring has been returned to Sauron and the world is over.</div>";
+      var div = body.querySelector("div");
+      div.style.fontSize = "5em";
+      div.style.marginTop = "30%";
+      div.style.textAlign = "center";
+    }
   });
   // add the ring as a child of Frodo
   frodo.appendChild(theOneRing);
